@@ -56,10 +56,17 @@ string [] ResultArray (string [] startArray)
 
 
 Console.Clear();
-Console.Write("Введите размерность первоначального массива: ");
-int lenArray = Convert.ToInt32(Console.ReadLine());
-string [] array = new string [lenArray];
-FillStartArray(array);
-PrintArray(array);
-Console.WriteLine();
-PrintArray(ResultArray(array));
+Console.Write("Введите размерность первоначального массива (целое число): ");
+try
+{
+    int lenArray = Convert.ToInt32(Console.ReadLine());
+    string [] array = new string [lenArray];
+    FillStartArray(array);
+    PrintArray(array);
+    Console.WriteLine();
+    PrintArray(ResultArray(array));
+}
+catch
+{
+    Console.WriteLine("Введите целое число!");
+}
